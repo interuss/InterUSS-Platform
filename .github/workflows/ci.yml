@@ -93,6 +93,8 @@ jobs:
         run: make down-locally
       - name: Start local DSS instance
         run: make start-locally
+      - name: (debug) logs
+        run:  sleep 10 && make collect-local-logs && cat core-service-for-testing.log
       - name: Probe local DSS instance
         run: make probe-locally
       - name: Run Qualifier against local DSS instance
